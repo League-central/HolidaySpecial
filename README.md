@@ -1,2 +1,2 @@
 # HolidaySpecial
-Recipes for holidays and/or special events
+Processing recipes for holidays and/or special events
