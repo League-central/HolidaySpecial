@@ -49,7 +49,8 @@ void draw() {
  if (gameOver) {
    fill(0);
    textSize(50);
-     text ("RACE OVER", width/4, height/2);
+   text ("RACE OVER", width/4, height/2);
+   drawConfetti();
  }
 }
 
@@ -77,3 +78,40 @@ void drawLaneMarkers() {
    // Put code here to draw lines to show the lanes of the racing course
    // Add text in each lane to show which turkey # is racing in it
 } 
+
+class Confetti {
+  int x;
+  int y;
+
+  public Confetti(int x, int y) {
+    this.x = x;
+    this.y = y;
+  }
+}
+
+ArrayList<Confetti> confettis = new ArrayList<Confetti>(500);
+
+public void drawConfetti() {
+  // Add 3 new confettis
+  for (int i = 0; i < 3; i++) {
+    confettis.add( new Confetti( int(random(width)), int(random(height) ) ) );
+  }
+
+  // Draw the confettis. Loop backwards as quick way to remove in loop.
+  for (int i = confettis.size() - 1; i >= 0; i--) {
+    Confetti eachConfetti = confettis.get(i);
+
+    // Draw a single confetti
+    noStroke();
+    fill(random(255), random(150), random(50));
+    ellipse(eachConfetti.x, eachConfetti.y, 8, 8);
+
+    // Move confetti down the screen
+    eachConfetti.y += 2;
+
+    // Remove confettis that go below the bottom of the screen
+    if (eachConfetti.y > height) {
+      confettis.remove(i);
+    }
+  }
+}
