@@ -29,9 +29,9 @@ void setup() {
 }
 
 void draw() {
+  // Draw the background (farmyard)
   
- if (!gameOver) {
-    // Draw the background (farmyard)
+  if (!gameOver) {
  
     drawLaneMarkers();   // This method draws the lines between each racing lane
     drawTurkeys();       // This method draws each turkey
@@ -42,7 +42,7 @@ void draw() {
 
     // Option: Draw the turkeys so they fill the racing lanes (fewer turkeys mean bigger size)
 
- }
+  }
 
 // This code only runs when the game is over
 // You do not have to change this code unless you want to

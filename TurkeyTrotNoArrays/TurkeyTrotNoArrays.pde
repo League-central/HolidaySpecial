@@ -38,8 +38,9 @@ void setup() {
 
 
 void draw() {
+  // Draw the background (farmyard)
   
- if (!gameOver) {
+  if (!gameOver) {
     // Draw the background (farmyard)
     background(farmyard);
    
@@ -52,7 +53,7 @@ void draw() {
     
     // Option: Draw the turkeys so they fill the racing lanes (fewer turkeys mean bigger size)
 
- }
+  }
 
 
 // This code only runs when the game is over
