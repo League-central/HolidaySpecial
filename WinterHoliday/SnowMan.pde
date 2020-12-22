@@ -1,4 +1,4 @@
-public class Snowman {
+public class SnowMan {
   int x;
   int y;
   color bodyColor;
@@ -12,15 +12,15 @@ public class Snowman {
   int offsetMid = offsetBot - (radiusBot);
   int offsetTop = offsetMid - (2*radiusTop);
   
-  public Snowman() {
-    this.scale = height / 800.0;    // scale 1 for width=1200, height=800
+  public SnowMan() {
+    this.scale = height / 800.0;    // scale 1 for height = 800
     this.x = width/2;  // centered
     this.y = height;   // bottom of screen
     this.bodyColor = color(#FFFFFF);
     this.inverted = color(255 - red(bodyColor), 255 - green(bodyColor), 255 - blue(bodyColor));
   }
   
-  public Snowman(int bodyColor){
+  public SnowMan(int bodyColor){
     this.scale = height / 800.0;
     this.x = width/2;  // centered
     this.y = height;   // bottom of screen
@@ -28,7 +28,7 @@ public class Snowman {
     this.inverted = color(255 - red(bodyColor), 255 - green(bodyColor), 255 - blue(bodyColor));
   }
   
-  public Snowman(int bodyColor, int x, int y) {
+  public SnowMan(int bodyColor, int x, int y) {
     this.scale = height / 800.0;
     this.x = x;
     this.y = y;
@@ -36,7 +36,7 @@ public class Snowman {
     this.inverted = color(255 - red(bodyColor), 255 - green(bodyColor), 255 - blue(bodyColor));
   }
   
-  public Snowman(float scale, int bodyColor){
+  public SnowMan(float scale, int bodyColor){
     this.scale = scale;
     this.x = width/2;  // centered
     this.y = height;   // bottom of screen
@@ -44,23 +44,14 @@ public class Snowman {
     this.inverted = color(255 - red(bodyColor), 255 - green(bodyColor), 255 - blue(bodyColor));
   }
   
-  public Snowman(float scale, int bodyColor, int x, int y) {
+  public SnowMan(float scale, int bodyColor, int x, int y) {
     this.scale = scale;
     this.x = x;
     this.y = y;
     this.bodyColor = color(bodyColor);
     this.inverted = color(255 - red(bodyColor), 255 - green(bodyColor), 255 - blue(bodyColor));
   }
-  
-  void draw() {
-    drawBody();
-    drawEyesMouth();
-    drawNose();
-    drawButtons();
-    drawHat();
-    drawArms();
-  }
-  
+
   private void drawBody(){
     noStroke();
     radiusBot = int(175 * scale);
