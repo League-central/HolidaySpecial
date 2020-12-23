@@ -137,6 +137,10 @@ public class SnowMan {
     strokeWeight(armWidth);
     strokeCap(ROUND);
 
+    if( abs(mouseX - leftArmX) == 0 || abs(mouseX - rightArmX) == 0 ){
+      return;
+    }
+
     // Left arm angle and lengths
     float thetaL = atan( abs(mouseY - armY) / abs(mouseX - leftArmX) );
     float leftHandX = armLength * cos(thetaL);
