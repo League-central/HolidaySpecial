@@ -189,6 +189,10 @@ public class SnowMan {
         } else {
           // Snowball on the screen so move it
           
+          if( abs(snowballThrowX - leftArmX) == 0 ){
+            return;
+          }
+          
           float thetaS = atan( abs(snowballThrowY - armY) / abs(snowballThrowX - leftArmX) );
           float snowballIncX = ( snowballThrowX > leftArmX ) ? 10 * cos(thetaS) : -10 * cos(thetaS);
           float snowballIncY = ( snowballThrowY > armY ) ? 10 * sin(thetaS) : -10 * sin(thetaS);
