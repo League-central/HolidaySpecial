@@ -52,7 +52,7 @@ class Snowfall {
     }
     
     // Remove snow at the bottom if necessary
-    for( int i = snowfall.size() - 1; i >= snowfall.size(); i-- ){
+    for( int i = snowfall.size() - 1; i >= 0; i-- ){
       Snow particle = snowfall.get(i);
       
       if( particle.y > height ){
