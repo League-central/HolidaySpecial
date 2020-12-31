@@ -121,9 +121,9 @@ public class Firework {
       // Draw a line from the old location to the new location
       strokeWeight(this.size);
       if( isSparkle ){
-        float red = red(this.fireworkColor) - random(50);
+        float red   = red(this.fireworkColor) - random(50);
         float green = green(this.fireworkColor) - random(50);
-        float blue = blue(this.fireworkColor) - random(50);
+        float blue  = blue(this.fireworkColor) - random(50);
         stroke(red, green, blue, random(255));
       } else {
         stroke(this.fireworkColor);
