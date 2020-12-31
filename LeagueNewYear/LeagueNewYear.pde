@@ -71,10 +71,11 @@ void draw() {
   //     fireworksDisplay.addFirework(newFirework, (100*k) + 10000);
   //   }
   //
-  // 2. Create a Countdown object in the setup() method with a starting value of 10. This will create a
-  // timer that counts down from 10 to 0.
+  // 2. Create a Countdown object in the setup() method with a starting value of 10.
+  //    This will create a timer that counts down from 10 to 0.
   //
   // 3. Call the fireworksDisplay's launch() method and the Countdown object's draw() method.
-  // How do the
+  // How do the fireworks look? See if you can modify some of the code to make your
+  // own unique New Year's fireworks celebration!
 
 }
