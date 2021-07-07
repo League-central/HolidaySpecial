@@ -14,6 +14,13 @@ public Turkey(int x, int y) {
   turkey.resize(size,size);
 }
 
+public Turkey(int x, int y, String turkeyImage) {
+  this.x = x;
+  this.y = y;
+  this.turkey = loadImage(turkeyImage);
+  turkey.resize(size,size);
+}
+
 public void draw() {
   image (turkey, x, y);
 }
