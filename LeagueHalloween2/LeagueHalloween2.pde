@@ -49,53 +49,29 @@ void setup() {
 void draw() {
   for ( int i = 0; i < panels.length; i++ ) {
     Panel panel = panels[i];
-    boolean addPumpkinFlag = false;
-    boolean clearPumpkinsFlag = false;
 
     for ( Pumpkin pumpkin : panel.pumpkins ) {
 
       /*
        * If mouse is hovering over a panel...
        */
-      if ( i == mouseX / (width / numPanels) ) { 
+      if ( i == mouseX / panelWidth ) { 
         pumpkin.bounce();
 
         if ( mousePressed ) {
-          if ( mouseButton == LEFT ) {
-            pumpkin.explode();
-          } else if ( mouseButton == RIGHT ) {
-            pumpkin.spin();
-          }
+          /*
+           * When the mouse is pressed...
+           */
+           
         }
 
         if ( keyPressed ) {
-          if ( keyCode == LEFT ) {
-            pumpkin.moveLeft(5);
-          } else if ( keyCode == RIGHT ) {
-            pumpkin.moveRight(5);
-          } else if ( key == 'r' ) {
-            pumpkin.reset();
-            clearPumpkinsFlag = true;
-          } else if ( key == 's' ) {
-            pumpkin.stop();
-          } else if ( key == 'a' ) {
-            addPumpkinFlag = true;
-          }
+          /*
+           * When a key is pressed...
+           */
+           
         }
-      } else {
-        pumpkin.stop();
       }
-    }
-
-    /*
-     * Outside of for loop to avoid concurrent modification exception
-     */
-    if ( addPumpkinFlag ) {
-      panel.addPumpkinRandomSize(int(random(0, panelWidth)));
-    }
-    if ( clearPumpkinsFlag ) {
-      panel.pumpkins.clear();
-      panel.addPumpkin(panel.pg.width / 2, 150);
     }
 
     panel.draw();
@@ -104,18 +80,10 @@ void draw() {
 
 void mouseWheel(MouseEvent event) {
 
-  for ( Pumpkin pumpkin : panels[mouseX / panelWidth].pumpkins ) {
-
-    /*
-     * event.getCount() returns < 0 if scrolled up (away from the user)
-     * event.getCount() returns > 0 if scrolled down (toward the user)
-     */
-    if ( event.getCount() > 0 ) {
-      pumpkin.setSpinSpeed( pumpkin.spinSpeed + 2 );
-    } else {
-      pumpkin.setSpinSpeed( pumpkin.spinSpeed - 2 );
-    }
-  }
+  /*
+   * event.getCount() returns < 0 if scrolled up (away from the user)
+   * event.getCount() returns > 0 if scrolled down (toward the user)
+   */
 }
 
 void initializePanels(color[] colors) {
